@@ -1,12 +1,12 @@
 const { PrismaClient } = require("@prisma/client");
-const bcrypt = require("bycrypt");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const prisma = new PrismaClient();
 
 exports.createUser = async (req, res) => {
     try {
         const { nombre, correo, password, rol } = req.body;
-        if (!nombre || !correo || !password || rol) return res.status(400).json({ mensaje: "Datos incompletos" });
+        if (!nombre || !correo || !password) return res.status(400).json({ mensaje: "Datos incompletos" });
 
         const hash = await bcrypt.hash(password, 10);
 
@@ -22,7 +22,7 @@ exports.createUser = async (req, res) => {
         res.json({ token });
     } catch (error) {
         console.error(error);
-        res.status(500).json
+        res.status(500).json({ mensaje: "error al crear usuario" })
     }
 }
 
@@ -32,7 +32,7 @@ exports.loginUser = async (req, res) => {
         const { correo, password } = req.body;
         if (!correo || !password) return res.status(400).json({ mensaje: "Datos incompletos" });
 
-        const usuario = prisma.user.findUnique({ where: { correo: correo } })
+        const usuario = await prisma.user.findUnique({ where: { correo: correo } })
         if (!usuario) return res.status(400).json({ mensaje: "No se encontro el usuario" });
 
         const validaPassword = await bcrypt.compare(password, usuario.password);
