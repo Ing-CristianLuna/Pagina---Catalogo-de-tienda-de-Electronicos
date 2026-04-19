@@ -38,6 +38,7 @@ exports.crearProducto = async (req, res) => {
 exports.actualizaProducto = async (req, res) => {
     try {
         const id = Number(req.params.id);
+
         const error = validaProducto(req.body);
         if (error) return res.status(400).json({ mensaje: error });
 
@@ -86,7 +87,7 @@ exports.eliminaProducto = async (req, res) => {
 
 //FUNCIONES
 function construirDataBody(body) {
-    const { modelo, precio, num_serie, descripcion, imagen, marcaId, categoriaId } = body;
+    const { modelo, precio, num_serie, descripcion, imagen, marcaID, categoriaId } = body;
 
     return {
         modelo,
@@ -94,15 +95,15 @@ function construirDataBody(body) {
         num_serie,
         descripcion,
         imagen,
-        marca: { connect: { id: Number(marcaId) } },
+        marca: { connect: { id: Number(marcaID) } },
         categoria: { connect: { id: Number(categoriaId) } }
     };
 };
 
 function validaProducto(body) {
-    const { modelo, precio, num_serie, descripcion, imagen, marcaId, categoriaId } = body;
+    const { modelo, precio, num_serie, descripcion, imagen, marcaID, categoriaId } = body;
 
-    if (!modelo || !precio || !num_serie || !descripcion || !imagen || !marcaId || !categoriaId) {
+    if (!modelo || !precio || !num_serie || !descripcion || !imagen || !marcaID || !categoriaId) {
         return "Datos incompletos";
     }
     if (isNaN(precio)) {
@@ -112,9 +113,9 @@ function validaProducto(body) {
 }
 
 async function validaForaneos(body) {
-    const { marcaId, categoriaId } = body;
+    const { marcaID, categoriaId } = body;
     //Si no se encuentra la marca
-    const marca = await prisma.marca.findUnique({ where: { id: Number(marcaId) } });
+    const marca = await prisma.marca.findUnique({ where: { id: Number(marcaID) } });
     //Si no se encuentra la categoria
     const categoria = await prisma.categoria.findUnique({ where: { id: Number(categoriaId) } })
     if (!categoria || !marca) {

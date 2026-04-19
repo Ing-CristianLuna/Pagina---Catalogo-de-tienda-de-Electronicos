@@ -2,6 +2,7 @@ import { Encabezado } from "./HomeComponents/Encabezado";
 import { Features } from "./HomeComponents/Features";
 import { GridSection } from "./HomeComponents/GridSection";
 import { Seccion } from "./HomeComponents/Seccion";
+import { SeccionMarcas } from "./HomeComponents/SeccionMarcas";
 
 export function Home() {
     return (
@@ -10,6 +11,7 @@ export function Home() {
             <Features />
             <GridSection />
             <Seccion />
+            <SeccionMarcas />
         </main>
     )
-}
+}   

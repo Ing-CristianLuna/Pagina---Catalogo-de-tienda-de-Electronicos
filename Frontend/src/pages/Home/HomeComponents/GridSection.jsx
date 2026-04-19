@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
 import { getProductos } from "../../../api/producto.api";
+import { Paginador } from "../../../components/Paginador";
 
 export function GridSection() {
     const [productos, setProductos] = useState([]);
+    const [paginaActual, setPaginaActual] = useState(1);
+
+    //Paginacion
+    const cantidadRegistros = 6;
+    const indiceFinal = cantidadRegistros * paginaActual;
+    const indiceInicial = indiceFinal - cantidadRegistros;
+    const registrosAMostrar = productos.slice(indiceInicial, indiceFinal);
+    const numeroPaginas = Math.ceil(productos.length / cantidadRegistros);
+
 
     useEffect(() => {
         async function cargaProductos() {
@@ -16,9 +26,8 @@ export function GridSection() {
     return (
         <section className="grid-section py-5">
             <div className="container">
-
                 <div className="row g-4">
-                    {productos.map(producto =>
+                    {registrosAMostrar.map(producto =>
                         <div className="col-4" key={producto.id}>
                             <div className="grid-card">
 
@@ -48,29 +57,7 @@ export function GridSection() {
                     )}
                 </div>
 
-                {/* Paginador */}
-                <div className="d-flex justify-content-center mt-5">
-                    <nav>
-                        <ul className="pagination">
-                            <li className="page-item">
-                                <button className="page-link">Anterior</button>
-                            </li>
-                            <li className="page-item active">
-                                <button className="page-link">1</button>
-                            </li>
-                            <li className="page-item">
-                                <button className="page-link">2</button>
-                            </li>
-                            <li className="page-item">
-                                <button className="page-link">3</button>
-                            </li>
-                            <li className="page-item">
-                                <button className="page-link">Siguiente</button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
+                <Paginador numeroPaginas={numeroPaginas} paginaActual={paginaActual} setPaginaActual={setPaginaActual} />
             </div>
         </section>
     )

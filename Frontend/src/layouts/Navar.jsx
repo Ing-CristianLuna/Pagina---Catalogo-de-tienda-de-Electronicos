@@ -1,3 +1,4 @@
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function Navar() {
     return (
@@ -24,10 +25,14 @@ export function Navar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto align-items-center gap-2">
                         <li className="nav-item">
-                            <a className="nav-link nav-link-custom" href="#">Inicio</a>
+                            <NavLink to="/home" className={({ isActive }) =>
+                                `nav-link ${isActive ? "active text-success" : "active"}`
+                            }>Inicio</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link nav-link-custom" href="#">Productos</a>
+                            <NavLink to="/productos" className={({ isActive }) =>
+                                `nav-link ${isActive ? "active text-success" : "active"}`
+                            }>Productos</NavLink>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link nav-link-custom" href="#">Nosotros</a>
