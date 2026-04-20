@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const api = axios.create({ import.meta.env.VITE_API_URL });
+export const api = axios.create({ baseURL: import.meta.env.VITE_API_URL });
 
 
 //para que mande el token en cada petiion
