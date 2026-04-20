@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getProductos } from "../../../api/producto.api";
 import { Paginador } from "../../../components/Paginador";
 
-export function GridSection() {
+export function GridSection({ setProducto, setMostrarModal }) {
     const [productos, setProductos] = useState([]);
     const [paginaActual, setPaginaActual] = useState(1);
 
@@ -51,7 +51,12 @@ export function GridSection() {
                                             <span className="dot"></span>
                                             <span className="dot"></span>
                                         </div>
-                                        <button className="btn btn-accion btn-sm">Comprar</button>
+
+                                        <button className="btn btn-accion btn-sm" onClick={() => {
+                                            setProducto(producto);
+                                            setMostrarModal(true);
+                                        }}
+                                        >Detalles</button>
                                     </div>
                                 </div>
 

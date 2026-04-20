@@ -5,7 +5,9 @@ const prisma = new PrismaClient();
 //cargar productos
 exports.obtenerProductos = async (req, res) => {
     try {
-        const resultados = await prisma.producto.findMany();
+        const resultados = await prisma.producto.findMany({
+            include: { marca: true, categoria: true }
+        });
         res.json(resultados);
     } catch (error) {
         console.error(error)

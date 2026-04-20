@@ -1,15 +1,24 @@
 import { useForm } from "react-hook-form";
 import { loginUser } from "../../api/user.api";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function FormLogin() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [statusError, setStatusError] = useState(false);
     const navega = useNavigate();
 
+    //verificar datos
     const onSubmit = handleSubmit(async (data) => {
-        const response = await loginUser(data);
-        localStorage.setItem("token", response.data.token);
-        navega("/home");
+        try {
+            const response = await loginUser(data);
+            localStorage.setItem("token", response.data.token);
+            navega("/home");
+        } catch (error) {
+            if (error.response?.status === 400) {
+                setStatusError(true);
+            }
+        }
     })
 
     return (
@@ -33,6 +42,7 @@ export function FormLogin() {
                     Ingresar
                 </button>
             </form>
+            {statusError && <span className="text-danger">Correo o usuario incorrecto. Intente de nuevo.</span>}
         </main>
     )
 }

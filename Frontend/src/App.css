@@ -317,3 +317,77 @@
     background-color: #e05555 !important;
     color: #fff !important;
 }
+
+/* MODAL PRODUCTO */
+.modal-producto {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.modal-producto-header {
+    background-color: #1a2b3c;
+    border-bottom: none;
+    padding: 16px 24px;
+}
+
+.modal-producto-title {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.modal-producto-img-wrapper {
+    background-color: #f0f7f5;
+    border-right: 1px solid #e2e8f0;
+}
+
+.modal-producto-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.modal-producto-badge {
+    display: inline-block;
+    background-color: #e0faf4;
+    color: #2daf92;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.modal-producto-modelo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a2b3c;
+    margin-bottom: 4px;
+}
+
+.modal-producto-precio {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3ecfaf;
+    margin-bottom: 12px;
+}
+
+.modal-producto-descripcion {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.modal-producto-divider {
+    border-color: #e2e8f0;
+}
+
+.modal-producto-tag {
+    background-color: #e8edf2;
+    color: #1a2b3c;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}

@@ -12,7 +12,7 @@ export function Navar() {
                 {/* Logo */}
                 <a className="navbar-brand nav-logo" href="#">
                     <span className="nav-logo-icon"></span>
-                    MiMarca
+                    Mundo Electrónico
                 </a>
 
                 {/* Toggler mobile */}
@@ -28,7 +28,7 @@ export function Navar() {
                 {/* Links */}
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto align-items-center gap-2">
-                        {payload && payload.rol && <li className="nav-item">
+                        {token && <li className="nav-item">
                             <NavLink to="/home" className={({ isActive }) =>
                                 `nav-link ${isActive ? "active text-success" : "active"}`
                             }>Inicio</NavLink>

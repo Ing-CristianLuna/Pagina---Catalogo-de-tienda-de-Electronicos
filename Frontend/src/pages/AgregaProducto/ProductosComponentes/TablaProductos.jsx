@@ -33,8 +33,8 @@ export function TablaProductos({ productos, setProducto, setMuestraModal }) {
                                             className="tabla-img"
                                         />
                                     </td>
-                                    <td className="py-3 px-4">{producto.categoriaId}</td>
-                                    <td className="py-3 px-4">{producto.marcaID}</td>
+                                    <td className="py-3 px-4">{producto.categoria?.categoria}</td>
+                                    <td className="py-3 px-4">{producto.marca?.nombre}</td>
                                     <td className="py-3 px-4">
                                         <button
                                             className="btn btn-accion btn-sm tabla-btn"

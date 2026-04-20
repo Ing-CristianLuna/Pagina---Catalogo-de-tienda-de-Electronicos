@@ -9,10 +9,17 @@ import { LoginUser } from './pages/User/LoginUser';
 import './App.css'
 
 function App() {
-
+  //Verifica que el usuario este logeado
   function PrivateRute({ children }) {
     const token = localStorage.getItem("token");
     return token ? children : <Navigate to="/loginUser" />;
+  }
+
+  //Solo los usuarios admin pueden editar productos
+  function PrivateRuteAdmin({ children }) {
+    const token = localStorage.getItem("token");
+    const payload = token ? JSON.parse(atob(token.split(".")[1])) : false;
+    return payload.rol ? children : <Navigate to="/home" />;
   }
 
   return (
@@ -21,7 +28,7 @@ function App() {
 
       <Routes>
         <Route path='/home' element={<PrivateRute><Home /></PrivateRute>} />
-        <Route path='/productos' element={<PrivateRute><Productos /></PrivateRute>} />
+        <Route path='/productos' element={<PrivateRute><PrivateRuteAdmin><Productos /></PrivateRuteAdmin></PrivateRute>} />
         <Route path='/registerUser' element={<CreateUser />} />
         <Route path='/loginUser' element={<LoginUser />} />
       </Routes>
