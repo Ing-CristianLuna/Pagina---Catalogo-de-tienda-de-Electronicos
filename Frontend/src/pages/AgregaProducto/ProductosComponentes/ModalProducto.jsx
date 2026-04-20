@@ -40,8 +40,8 @@ export function ModalProducto({ producto, agrega, cerrarModal, actualizaTabla })
             <div className="modal d-block" tabIndex="-1">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Producto</h5>
+                        <div className="modal-header" style={{ backgroundColor: "#1a2b3c" }}>
+                            <h5 className="modal-title text-light">Producto</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                 onClick={() => cerrarModal()}></button>
                         </div>
@@ -84,9 +84,9 @@ export function ModalProducto({ producto, agrega, cerrarModal, actualizaTabla })
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => cerrarModal()}>Cerrar</button>
-                                {agrega && <button type="button" className="btn btn-primary" onClick={onAgrega}>Agregar</button>}
-                                {!agrega && <button type="button" className="btn btn-warning" onClick={onActualiza}>Actualizar</button>}
-                                {!agrega && <button type="button" className="btn btn-danger" onClick={onElimina}>Eliminar</button>}
+                                {agrega && <button type="button" className="btn btn-accion" onClick={onAgrega}>Agregar</button>}
+                                {!agrega && <button type="button" className="btn btn-actualizar" onClick={onActualiza}>Actualizar</button>}
+                                {!agrega && <button type="button" className="btn btn-eliminar" onClick={onElimina}>Eliminar</button>}
                             </div>
                         </form>
                     </div>

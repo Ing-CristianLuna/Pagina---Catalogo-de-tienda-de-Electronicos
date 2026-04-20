@@ -1,18 +1,18 @@
 .hero-section {
-    background-color: #e8edf2;
-    min-height: 40vh;
-    padding: 80px 0;
+    background-color: #1a2b3c;
+    min-height: 50vh;
+    padding-bottom: 80px;
 }
 
 .hero-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a2b3c;
+    color: #3ecfaf;
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
-    color: #4a5568;
+    color: #fff;
 }
 
 .hero-btn {
@@ -29,8 +29,9 @@
     color: #fff;
 }
 
+/* Features */
 .features-section {
-    background-color: #e8edf2;
+    margin-top: -140px;
 }
 
 .feature-card {
@@ -65,19 +66,29 @@
     border: 1px solid #d0d9e2;
     border-radius: 10px;
     overflow: hidden;
+    height: 420px;
+    /* altura fija para todas las cards */
 }
 
 .grid-card-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 180px;
+    object-fit: cover;
+    /* altura fija para la imagen */
     object-fit: cover;
 }
 
+.grid-card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* máximo 2 líneas de descripción */
+    -webkit-box-orient: vertical;
+}
+
+
 
 /* SECCION */
-.categories-section {
-    background-color: #e8edf2;
-}
 
 .category-card {
     border-radius: 10px;
@@ -95,22 +106,14 @@
 }
 
 .category-solid {
-    background-color: #3ecfaf;
+    background-color: #1a2b3c;
 }
 
-.category-pattern {
-    background-color: #3ecfaf;
-    background-image: repeating-linear-gradient(45deg,
-            transparent,
-            transparent 8px,
-            rgba(255, 255, 255, 0.3) 8px,
-            rgba(255, 255, 255, 0.3) 10px);
-}
 
 .category-label {
     font-size: 1rem;
     font-weight: 700;
-    color: #1a2b3c;
+    color: #3ecfaf;
 }
 
 /* MARCAS SECCION */
@@ -232,4 +235,85 @@
 .footer-copy {
     color: #a0aec0;
     font-size: 0.85rem;
+}
+
+/* TABLA PRODUCTOS */
+.tabla-precio {
+    color: #3ecfaf;
+    font-weight: 700;
+}
+
+.tabla-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #3ecfaf;
+}
+
+.tabla-btn {
+    background-color: #3ecfaf;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 4px 16px;
+}
+
+.tabla-btn:hover {
+    background-color: #2daf92;
+    color: #fff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0f7f5;
+}
+
+.table thead th {
+    color: #1a2b3c;
+    font-weight: 700;
+    border-bottom: 2px solid #3ecfaf;
+}
+
+/* BOTONES */
+/* Botón común */
+.btn-accion {
+    background-color: #3ecfaf !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 20px !important;
+    font-weight: 600;
+}
+
+.btn-accion:hover {
+    background-color: #2daf92 !important;
+    color: #fff !important;
+}
+
+/* Botón actualizar */
+.btn-actualizar {
+    background-color: transparent !important;
+    color: #3ecfaf !important;
+    border: 2px solid #3ecfaf !important;
+    border-radius: 20px !important;
+    font-weight: 600;
+}
+
+.btn-actualizar:hover {
+    background-color: #3ecfaf !important;
+    color: #fff !important;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background-color: transparent !important;
+    color: #e05555 !important;
+    border: 2px solid #e05555 !important;
+    border-radius: 20px !important;
+    font-weight: 600;
+}
+
+.btn-eliminar:hover {
+    background-color: #e05555 !important;
+    color: #fff !important;
 }

@@ -29,7 +29,7 @@ export function FormLogin() {
                     </div>
                 </div>
 
-                <button className="btn btn-primary col-md-12 mt-3">
+                <button className="btn btn-accion col-md-12 mt-3">
                     Ingresar
                 </button>
             </form>

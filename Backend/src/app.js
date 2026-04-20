@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const swaggerSetup = require("./swagger");
 
 const productoRutas = require("./routes/producto.routes");
 const marcaRutas = require("./routes/marca.routes");
@@ -18,5 +19,7 @@ app.use("/marca", auth, marcaRutas);
 app.use("/categoria", auth, categoriaRutas);
 app.use("/userCreate", userRutas);
 app.use("/userLogin", userLoginRutas);
+
+swaggerSetup(app);
 
 module.exports = app;

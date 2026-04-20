@@ -4,15 +4,12 @@ export function Encabezado() {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-8 col-lg-6">
-                        <h1>MUNDO ELECTRONICO</h1>
+                        <h1 className="hero-title mb-3">MUNDO ELECTRÓNICO</h1>
 
-                        <p className="hero-title mb-3">
-                            Tienda de dispoitivos electronicos a un buen precio
+                        <p className="hero-subtitle mb-3">
+                            Tienda de dispoitivos electrónicos a un buen precio
                         </p>
 
-                        <button className="btn hero-btn px-4 py-2">
-                            Comenzar ahora
-                        </button>
                     </div>
                 </div>
             </div>

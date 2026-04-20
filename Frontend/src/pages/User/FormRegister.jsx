@@ -49,7 +49,7 @@ export function FormRegister() {
                         </div>
                     </div>
                 </div>
-                <button className="btn btn-primary col-md-12 mt-3">
+                <button className="btn btn-accion col-md-12 mt-3">
                     Registrar
                 </button>
             </form>

@@ -6,26 +6,26 @@ export function Seccion() {
 
                 <div className="row g-3">
 
-                    <div className="col-6">
+                    <div className="col-3">
                         <div className="category-card category-solid">
                             <span className="category-label">5 años de experiencia</span>
                         </div>
                     </div>
 
-                    <div className="col-6">
+                    <div className="col-3">
                         <div className="category-card category-solid">
                             <span className="category-label">Distribuidores autorizados</span>
                         </div>
                     </div>
 
-                    <div className="col-6">
-                        <div className="category-card category-pattern">
+                    <div className="col-3">
+                        <div className="category-card category-solid">
                             <span className="category-label">Mas de 5000 productos vendidos</span>
                         </div>
                     </div>
 
-                    <div className="col-6">
-                        <div className="category-card category-pattern">
+                    <div className="col-3">
+                        <div className="category-card category-solid">
                             <span className="category-label">Ofrecemos garantia de hasta por un año</span>
                         </div>
                     </div>

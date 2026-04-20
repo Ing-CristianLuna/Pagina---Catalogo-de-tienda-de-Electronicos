@@ -26,7 +26,7 @@ export function Productos() {
 
     return (
         <main className="container m-5">
-            <button className="mt-5 col-md-12 btn btn-success" onClick={() => { setAgrega(true); setMuestraModal(true) }}> Agregar</button>
+            <button className="mt-5 col-md-12 btn btn-accion" onClick={() => { setAgrega(true); setMuestraModal(true) }}> Agregar</button>
             <TablaProductos productos={productos} setProducto={setProducto} setMuestraModal={setMuestraModal} />
             {muestraModal && <ModalProducto producto={producto} agrega={agrega} cerrarModal={cerrarModal} actualizaTabla={obtenerProductos} />}
         </main>

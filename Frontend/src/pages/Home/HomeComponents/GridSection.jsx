@@ -7,7 +7,7 @@ export function GridSection() {
     const [paginaActual, setPaginaActual] = useState(1);
 
     //Paginacion
-    const cantidadRegistros = 6;
+    const cantidadRegistros = 8;
     const indiceFinal = cantidadRegistros * paginaActual;
     const indiceInicial = indiceFinal - cantidadRegistros;
     const registrosAMostrar = productos.slice(indiceInicial, indiceFinal);
@@ -24,17 +24,20 @@ export function GridSection() {
     }, []);
 
     return (
-        <section className="grid-section py-5">
-            <div className="container">
-                <div className="row g-4">
+        <section className="grid-section py-5" style={{ minHeight: "850px" }}>
+
+            <div className="container" >
+                <h2 className="my-3">Productos disponibles</h2>
+                <div className="row g-4" style={{ minHeight: "700px", alignContent: "flex-start" }}>
                     {registrosAMostrar.map(producto =>
-                        <div className="col-4" key={producto.id}>
+                        <div className="col-3" key={producto.id}>
                             <div className="grid-card">
 
                                 <img
                                     src={producto.imagen}
                                     alt={producto.modelo}
                                     className="grid-card-img"
+
                                 />
 
                                 <div className="p-3">
@@ -48,7 +51,7 @@ export function GridSection() {
                                             <span className="dot"></span>
                                             <span className="dot"></span>
                                         </div>
-                                        <button className="btn grid-card-btn btn-sm">Ver más</button>
+                                        <button className="btn btn-accion btn-sm">Comprar</button>
                                     </div>
                                 </div>
 

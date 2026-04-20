@@ -8,9 +8,9 @@ export function Footer() {
 
                     {/* Columna 1 - Logo y descripción */}
                     <div className="col-12 col-md-4">
-                        <h5 className="footer-brand mb-3">Tu Marca</h5>
+                        <h5 className="footer-brand mb-3">Mundo electrónico</h5>
                         <p className="footer-text">
-                            Descripción breve de tu empresa o proyecto.
+                            Tienda dedicada a la venta de equipos electrónicos a precios accesibles.
                         </p>
                         <div className="d-flex gap-2 mt-3">
                             <span className="footer-social-icon"></span>
